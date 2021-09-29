@@ -18,7 +18,6 @@ const prodConfig = {
             },
             shared: packageJson.dependencies
         }),
-
     ]
 }
 
