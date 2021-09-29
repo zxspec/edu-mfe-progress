@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { createMemoryHistory } from "history";
 
-export const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory ?? createMemoryHistory();
+export const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  const history =
+    defaultHistory ?? createMemoryHistory({ initialEntries: [initialPath] });
 
   onNavigate && history.listen(onNavigate);
 
