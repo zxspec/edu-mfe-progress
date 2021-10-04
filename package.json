@@ -14,7 +14,10 @@
     "start:container": "npm run start -w container",
     "start:auth": "npm run start -w auth",
     "start:marketing": "npm run start -w marketing",
-    "build": "webpack --config config/webpack.prod.js"
+    "build": "concurrently npm:build:container npm:build:auth npm:build:marketing",
+    "build:container": "npm run build -w container",
+    "build:auth": "npm run build -w auth",
+    "build:marketing": "npm run build -w marketing"
   },
   "repository": {
     "type": "git",
