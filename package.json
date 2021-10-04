@@ -1,0 +1,32 @@
+{
+  "name": "mfe-progress",
+  "version": "1.0.0",
+  "description": "micro frontends",
+  "private": true,
+  "workspaces": [
+    "auth",
+    "container",
+    "dashboard",
+    "marketing"
+  ],
+  "scripts": {
+    "start": "concurrently npm:start:container npm:start:auth npm:start:marketing",
+    "start:container": "npm run start -w container",
+    "start:auth": "npm run start -w auth",
+    "start:marketing": "npm run start -w marketing",
+    "build": "webpack --config config/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxspec/mfe-progress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zxspec/mfe-progress/issues"
+  },
+  "homepage": "https://github.com/zxspec/mfe-progress#readme",
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
