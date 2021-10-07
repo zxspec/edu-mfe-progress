@@ -10,14 +10,16 @@
     "marketing"
   ],
   "scripts": {
-    "start": "concurrently npm:start:container npm:start:auth npm:start:marketing",
+    "start": "concurrently npm:start:container npm:start:auth npm:start:marketing npm:start:dashboard",
     "start:container": "npm run start -w container",
     "start:auth": "npm run start -w auth",
     "start:marketing": "npm run start -w marketing",
-    "build": "concurrently npm:build:container npm:build:auth npm:build:marketing",
+    "start:dashboard": "npm run start -w dashboard",
+    "build": "concurrently npm:build:container npm:build:auth npm:build:marketing builld:dashboard",
     "build:container": "npm run build -w container",
     "build:auth": "npm run build -w auth",
-    "build:marketing": "npm run build -w marketing"
+    "build:marketing": "npm run build -w marketing",
+    "builld:dashboard": "npm run builld -w dashboard"
   },
   "repository": {
     "type": "git",
